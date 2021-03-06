@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/navigationLayoutFragment">
+
+    <fragment
+        android:id="@+id/signUpFragment"
+        android:name="com.example.quizapp.fragments.SignUpFragment"
+        android:label="fragment_sign_up"
+        tools:layout="@layout/fragment_sign_up" >
+        <action
+            android:id="@+id/action_signUpFragment_to_loginFragment"
+            app:destination="@id/loginFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/loginFragment"
+        android:name="com.example.quizapp.fragments.LoginFragment"
+        android:label="fragment_login"
+        tools:layout="@layout/fragment_login" >
+        <action
+            android:id="@+id/action_loginFragment_to_signUpFragment"
+            app:destination="@id/signUpFragment" />
+        <action
+            android:id="@+id/action_loginFragment_to_navigationLayoutFragment"
+            app:destination="@id/navigationLayoutFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/homeFragment"
+        android:name="com.example.quizapp.fragments.HomeFragment"
+        android:label="fragment_home"
+        tools:layout="@layout/fragment_home" />
+    <fragment
+        android:id="@+id/resultFragment"
+        android:name="com.example.quizapp.ResultFragment"
+        android:label="fragment_result"
+        tools:layout="@layout/fragment_result" />
+    <fragment
+        android:id="@+id/navigationLayoutFragment"
+        android:name="com.example.quizapp.fragments.NavigationLayoutFragment"
+        android:label="fragment_navigation_layout"
+        tools:layout="@layout/fragment_navigation_layout" >
+        <action
+            android:id="@+id/action_navigationLayoutFragment_to_loginFragment"
+            app:destination="@id/loginFragment" />
+        <action
+            android:id="@+id/action_navigationLayoutFragment_to_spinnerFragment"
+            app:destination="@id/spinnerFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/spinnerFragment"
+        android:name="com.example.quizapp.fragments.SpinnerFragment"
+        android:label="fragment_spinner"
+        tools:layout="@layout/fragment_spinner" />
+</navigation>
